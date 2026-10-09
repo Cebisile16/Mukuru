@@ -12,7 +12,6 @@ from .models import Goal, Transaction
 USER_ID = DEMO_USER_ID
 ACCOUNT_HOLDER = DEMO_ACCOUNT_HOLDER
 
-# (day, amount, merchant, description, type, category, is_remittance)
 _MONTHLY = [
     (1, 8000.0, "Employer", "Monthly salary", "credit", "other", False),
     (1, 1800.0, "Landlord", "Rent", "debit", "rent", False),
@@ -42,7 +41,7 @@ def _build_transactions() -> list[Transaction]:
 
     The previous seed dated every month on fixed days without checking the
     calendar, so on the 2nd of the month it created transactions dated later
-    that month — including a salary that had not been paid yet. Those rows
+    that month including a salary that had not been paid yet. Those rows
     then made the budget and report claim money that did not exist yet.
     """
     today = date.today()
